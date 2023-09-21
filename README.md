@@ -74,7 +74,7 @@ Dependency for Connector/J, the MySQL JDBC driver is already included in the `po
 
 You may start a MySql database with docker:
 
-```
+```shell
 docker run -e MYSQL_ROOT_PASSWORD=petclinic -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:5.7.8
 ```
 or download and install the MySQL database (e.g., MySQL Community Server 5.7 GA), which can be found here: https://dev.mysql.com/downloads/

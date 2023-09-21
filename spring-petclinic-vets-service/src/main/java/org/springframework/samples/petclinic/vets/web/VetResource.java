@@ -23,6 +23,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.samples.petclinic.vets.model.Vet;
 import org.springframework.samples.petclinic.vets.model.VetRepository;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -44,5 +45,16 @@ class VetResource {
     @Cacheable("vets")
     public List<Vet> showResourcesVetList() {
         return vetRepository.findAll();
+    }
+
+    /**
+     * Retrieves a list of vets by position.
+     *
+     * @param position the position of the vets to retrieve
+     * @return a list of Vet objects matching the specified position
+     */
+    @GetMapping(/*/vets*/ "/position/{position}") // todo here was problem
+    public List<Vet> getVetsByPosition(@PathVariable String position) {
+        return vetRepository.findVetByPosition(position);
     }
 }

@@ -36,6 +36,7 @@ import jakarta.xml.bind.annotation.XmlElement;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 
@@ -70,6 +71,12 @@ public class Vet {
     @Getter
     @Setter
     private String lastName;
+
+    @Getter
+    @Setter
+    @Column(name = "position")
+    @NotEmpty
+    private String position;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "vet_specialties", joinColumns = @JoinColumn(name = "vet_id"),

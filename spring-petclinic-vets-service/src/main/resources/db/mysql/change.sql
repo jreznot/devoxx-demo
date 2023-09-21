@@ -1,0 +1,2 @@
+ALTER TABLE vets
+    ADD COLUMN position VARCHAR(255) NOT NULL;
